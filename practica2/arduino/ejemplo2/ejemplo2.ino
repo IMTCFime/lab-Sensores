@@ -1,5 +1,5 @@
-int ledRojo = 12;
-int ledVerde = 13;
+int ledRojo = 13;
+int ledVerde = 12;
 void setup() {
   Serial.begin(9600);
   pinMode(ledRojo, OUTPUT);

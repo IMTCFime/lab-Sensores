@@ -1,21 +1,22 @@
 /*
-  Ejemplo1 de la practica1 de lab. de Sensores y actuadores.
+  Ejemplo1 de la practica2 de lab. de Sensores y actuadores.
  */
 
-// the setup routine runs once when you press reset:
+// La funcion void se ejecuta una sola vez al correr el codigo:
 void setup() {
-  // initialize serial communication at 9600 bits per second:
+  // Inicializa la comunicacion Serial a una velocidad de 9600 bits por segundo:
   Serial.begin(9600);
 }
 
-// the loop routine runs over and over again forever:
+// La funcion loop se ejecuta infinitamente despues de que se ejecuto la funcion setup:
 void loop() {
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
+  // Lee el valor en la entrada analogica :
+  int sensorValue = analogRead(A2);
+  // Convertimos los valores leidos de 0-1023 a 0-5
   float value = (float)sensorValue*5/1023;
-  // print out the value you read:
+  // Imprimimos los valores leido como voltaje:
   Serial.print("Voltaje: ");
   Serial.print(value);
   Serial.println("V");
-  delay(10);        // delay in between reads for stability
+  delay(10);        // esperamos 10 ms antes de volver a ejecutar el loop
 }
